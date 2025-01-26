@@ -3,6 +3,7 @@ import NewsList from "../components/NewsList";
 import { NewsPageServices } from "../services/NewsPageServices";
 import NewsFilter from "../components/NewsFilter";
 import { useOutletContext } from "react-router-dom";
+import { FaArrowUp } from "react-icons/fa6";
 
 function News() {
   const [isRendering, setIsRendering] = useState(false);
@@ -55,26 +56,39 @@ function News() {
   }, [selectedLanguage]);
 
   return (
-    <div className="mx-auto w-[1200px] pb-20 pt-10">
-      {isRendering ? (
-        <span className="loading loading-dots loading-md m-auto flex items-center"></span>
-      ) : (
-        <NewsFilter
-          selectedLanguage={selectedLanguage}
-          setSelectedLanguage={setSelectedLanguage}
-          setFilterQuery={setFilterQuery}
-          sources={sources}
-          categories={categories}
-          languages={languages}
+    <>
+      <button
+        onClick={() =>
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          })
+        }
+        className="btn-circle fixed bottom-7 right-7 z-50 flex cursor-pointer items-center justify-center bg-stone-950 text-lg text-slate-50 transition-all dark:bg-slate-50 dark:text-stone-950"
+      >
+        <FaArrowUp />
+      </button>
+      <div className="mx-auto w-[1200px] pb-20 pt-10">
+        {isRendering ? (
+          <span className="loading loading-dots loading-md m-auto flex items-center"></span>
+        ) : (
+          <NewsFilter
+            selectedLanguage={selectedLanguage}
+            setSelectedLanguage={setSelectedLanguage}
+            setFilterQuery={setFilterQuery}
+            sources={sources}
+            categories={categories}
+            languages={languages}
+          />
+        )}
+        <NewsList
+          pageName={"news"}
+          language={selectedLanguage}
+          filterQuery={filterQuery}
+          setErrors={setErrors}
         />
-      )}
-      <NewsList
-        pageName={"news"}
-        language={selectedLanguage}
-        filterQuery={filterQuery}
-        setErrors={setErrors}
-      />
-    </div>
+      </div>
+    </>
   );
 }
 

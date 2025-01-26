@@ -13,7 +13,6 @@ function HomeHighlights({ visibility, setCoinModalStatus, setErrors }) {
         await highlightsServices.fetch();
         setData(highlightsServices.data);
       } catch ({ name, message }) {
-        console.log(name);
         if (name === "AxiosError") {
           setErrors(["You've exceeded the Rate Limit. Please try after"]);
         } else {
