@@ -37,10 +37,10 @@ function ErrorModal({ errors, setErrors }) {
           <h3 className="text-lg font-bold">Something Went Wrong !</h3>
           <ul className="py-4">
             {errors.map((error, index) => (
-              <li key={index}>
+              <li className="text-sm sm:text-base" key={index}>
                 {error ===
                 "You've exceeded the Rate Limit. Please try after" ? (
-                  <span className="countdown flex items-center gap-2">
+                  <span className="countdown flex flex-wrap gap-2">
                     {error}
                     <span style={{ "--value": counter }}></span>
                   </span>

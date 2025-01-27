@@ -40,39 +40,13 @@ function NewsItem({ item }) {
           <span className="text-sm opacity-60">{publishTime}</span>
         </div>
         <a href={item.URL}>
-          <h3
-            style={{
-              display: "-webkit-box",
-              WebkitBoxOrient: "vertical",
-              WebkitLineClamp: "1",
-              overflow: "hidden",
-            }}
-            className="mt-1 text-lg"
-          >
-            {item.TITLE}
-          </h3>
+          <h3 className="mt-1 line-clamp-1 text-xl">{item.TITLE}</h3>
         </a>
-        <p
-          className="mt-1 text-sm tracking-wide opacity-85"
-          style={{
-            display: "-webkit-box",
-            WebkitBoxOrient: "vertical",
-            WebkitLineClamp: "2",
-            overflow: "hidden",
-          }}
-        >
+        <p className="mt-1 line-clamp-4 text-sm tracking-wide opacity-75 sm:line-clamp-2">
           {item.BODY}
         </p>
         <div className="mt-3 flex w-full flex-col justify-between gap-3 md:flex-row md:items-center md:gap-0">
-          <span
-            className="text-xs opacity-60"
-            style={{
-              display: "-webkit-box",
-              WebkitBoxOrient: "vertical",
-              WebkitLineClamp: "1",
-              overflow: "hidden",
-            }}
-          >
+          <span className="line-clamp-1 text-xs opacity-60">
             Categories:
             {!!item.CATEGORY_DATA.length &&
               item.CATEGORY_DATA.map((category, index) =>
