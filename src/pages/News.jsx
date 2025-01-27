@@ -68,7 +68,7 @@ function News() {
       >
         <FaArrowUp />
       </button>
-      <div className="mx-auto w-[1200px] pb-20 pt-10">
+      <div className="mx-auto w-full pb-20 pt-10 lg:container sm:px-6 lg:max-w-[1225px]">
         {isRendering ? (
           <span className="loading loading-dots loading-md m-auto flex items-center"></span>
         ) : (

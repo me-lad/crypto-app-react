@@ -32,7 +32,7 @@ function CoinChart({ data, chartRef, chartDuration, currentValue }) {
   }, [data, chartRef]);
 
   return (
-    <div className="mt-10 w-full px-4">
+    <div className="mt-10 w-full md:px-4">
       <ResponsiveContainer
         width="100%"
         height="100%"

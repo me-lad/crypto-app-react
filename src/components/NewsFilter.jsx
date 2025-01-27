@@ -53,7 +53,7 @@ function NewsFilter({
   return (
     <div
       onBlur={() => handleDropDown("blur")}
-      className="mb-12 mt-6 flex items-center justify-between border-b border-black px-1 pb-4 dark:border-white"
+      className="mb-12 mt-6 flex flex-wrap items-center justify-between gap-y-2 border-b border-black px-1 pb-4 dark:border-white"
     >
       <LanguageFilter
         activeDropDown={activeDropDown}
@@ -78,14 +78,14 @@ function NewsFilter({
       />
       <button
         onClick={() => buildQuery()}
-        className="flex min-w-[12.5%] items-center justify-center gap-2 rounded-sm border border-gray-500 py-1 transition-all hover:bg-gray-500"
+        className="flex min-w-[49.75%] items-center justify-center gap-2 rounded-sm border border-gray-500 py-1 transition-all hover:bg-gray-500 lg:min-w-[12.5%]"
       >
         Set Filters
         <FaCheck className="mt-1 text-green-700" />
       </button>
       <button
         onClick={() => resetFilters()}
-        className="flex min-w-[12.5%] items-center justify-center gap-2 rounded-sm border border-gray-500 py-1 transition-all hover:bg-gray-500"
+        className="flex min-w-[49.75%] items-center justify-center gap-2 rounded-sm border border-gray-500 py-1 transition-all hover:bg-gray-500 lg:min-w-[12.5%]"
       >
         Reset Filters
         <FaXmark className="mt-1 text-red-700" />
@@ -109,7 +109,7 @@ const LanguageFilter = ({
       id="filter-dropDown"
       data-select-id="1"
       onClick={(e) => handleDropDown(e.currentTarget)}
-      className="group/filter relative flex min-w-[24%] items-center justify-center gap-2 rounded-sm border border-gray-500 py-1 transition-all hover:bg-gray-500"
+      className="group/filter relative flex w-full items-center justify-center gap-2 rounded-sm border border-gray-500 py-1 transition-all hover:bg-gray-500 md:max-w-[33%] lg:max-w-[24%]"
     >
       Languages
       {activeDropDown === "1" ? (
@@ -163,7 +163,7 @@ const SourceFilter = ({
       id="filter-dropDown"
       data-select-id="2"
       onClick={(e) => handleDropDown(e.currentTarget)}
-      className="group/filter relative flex min-w-[24%] items-center justify-center gap-2 rounded-sm border border-gray-500 py-1 transition-all hover:bg-gray-500"
+      className="group/filter relative flex w-full items-center justify-center gap-2 rounded-sm border border-gray-500 py-1 transition-all hover:bg-gray-500 md:max-w-[33%] lg:max-w-[24%]"
     >
       News Feeds
       {activeDropDown === "2" ? (
@@ -202,7 +202,7 @@ const SourceFilter = ({
               <BiCheckbox className="mt-1 text-2xl" />
             )}
             <img
-              className="w-1/6 rounded-sm"
+              className="w-1/12 rounded-sm md:w-1/6"
               src={source.IMAGE_URL}
               alt={source.NAME}
             />
@@ -236,7 +236,7 @@ const CategoryFilter = ({
       id="filter-dropDown"
       data-select-id="3"
       onClick={(e) => handleDropDown(e.currentTarget)}
-      className="group/filter relative flex min-w-[24%] items-center justify-center gap-2 rounded-sm border border-gray-500 py-1 transition-all hover:bg-gray-500"
+      className="group/filter relative flex w-full items-center justify-center gap-2 rounded-sm border border-gray-500 py-1 transition-all hover:bg-gray-500 md:max-w-[33%] lg:max-w-[24%]"
     >
       Categories
       {activeDropDown === "3" ? (
