@@ -7,9 +7,9 @@ function HomeContent({
 }) {
   return (
     <div className="mt-10 w-full rounded-md border border-black dark:border-white">
-      <div className="flex w-full items-center justify-between *:border-black *:font-semibold *:dark:border-white">
+      <div className="no-scrollbar flex w-full items-center justify-between overflow-x-auto *:border-black *:font-semibold *:dark:border-white">
         <label
-          className="flex w-1/3 cursor-pointer justify-center border-b border-r py-2 text-xl has-[:checked]:text-green-700"
+          className="flex w-1/3 min-w-[180px] cursor-pointer justify-center border-b border-r py-2 text-xl has-[:checked]:text-green-700"
           htmlFor="content-radio-1"
         >
           Coins
@@ -28,7 +28,7 @@ function HomeContent({
           />
         </label>
         <label
-          className="flex w-1/3 cursor-pointer justify-center border-b py-2 text-xl has-[:checked]:text-green-700"
+          className="flex w-1/3 min-w-[180px] cursor-pointer justify-center border-b py-2 text-xl has-[:checked]:text-green-700"
           htmlFor="content-radio-2"
         >
           Latest News
@@ -48,7 +48,7 @@ function HomeContent({
           />
         </label>
         <label
-          className="flex w-1/3 cursor-pointer justify-center border-b border-l py-2 text-xl has-[:checked]:text-green-700"
+          className="flex w-1/3 min-w-[180px] cursor-pointer justify-center border-b border-l py-2 text-xl has-[:checked]:text-green-700"
           htmlFor="content-radio-3"
         >
           Watch List

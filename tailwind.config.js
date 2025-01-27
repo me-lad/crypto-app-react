@@ -11,7 +11,11 @@ export default {
   },
 
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        sm: "520px",
+      },
+    },
   },
   plugins: [daisyui],
 };

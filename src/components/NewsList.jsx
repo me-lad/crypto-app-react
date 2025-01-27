@@ -67,7 +67,7 @@ function NewsList({ pageName, language, filterQuery, setErrors }) {
         <Loading />
       ) : (
         <>
-          <ul className="min-h-[600px]">
+          <ul>
             {news.map((item) => (
               <NewsItem
                 key={Math.round(

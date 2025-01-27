@@ -11,9 +11,9 @@ function HomeTopbar({
   setErrors,
 }) {
   return (
-    <div className="flex items-center justify-between">
-      <div className="flex items-center gap-10">
-        <h1 className="flex items-center gap-2 text-2xl">
+    <div className="flex flex-wrap items-center justify-center gap-8 gap-y-6 md:justify-between">
+      <div className="flex flex-wrap items-center justify-center gap-10 gap-y-6 md:justify-start">
+        <h1 className="flex flex-wrap items-center justify-center gap-2 text-2xl sm:justify-start">
           Cryptocurrency Data by
           <label className="swap swap-indeterminate">
             {contentSelectedSection === 1 ? (

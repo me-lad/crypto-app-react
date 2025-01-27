@@ -35,7 +35,7 @@ function Home() {
   };
 
   return (
-    <div className="mx-auto w-[1200px] pb-36 pt-20">
+    <div className="mx-auto w-full px-1 pb-36 pt-20 lg:container sm:px-6 lg:max-w-[1225px]">
       <HomeTopbar
         contentSelectedSection={contentSelectedSection}
         coinsRenderOrder={coinsRenderOrder}
@@ -60,7 +60,7 @@ function Home() {
         setWatchListMountStatus={setWatchListMountStatus}
       >
         <div className={`group/content show-${contentSelectedSection}`}>
-          <div className="hidden w-full group-[.show-1]/content:block">
+          <div className="hidden w-full overflow-x-auto group-[.show-1]/content:block">
             <CoinsList
               order={coinsRenderOrder}
               setCoinModalStatus={setCoinModalStatus}

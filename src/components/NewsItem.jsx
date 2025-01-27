@@ -15,11 +15,11 @@ function NewsItem({ item }) {
   }, [publishTime]);
 
   return (
-    <li className="flex items-center gap-4 border-b border-black px-5 py-3 dark:border-white">
+    <li className="flex flex-col items-center gap-4 border-b border-black px-5 py-3 dark:border-white sm:flex-row">
       <div>
         <a href={item.URL}>
           <img
-            className="max-h-[105px] min-w-[105px] rounded-sm object-cover"
+            className="min-w-full rounded-sm object-cover sm:max-h-[105px] sm:min-w-[105px]"
             src={item.IMAGE_URL}
             alt={item.KEYWORDS}
             onError={({ currentTarget }) => {
@@ -40,7 +40,17 @@ function NewsItem({ item }) {
           <span className="text-sm opacity-60">{publishTime}</span>
         </div>
         <a href={item.URL}>
-          <h3 className="mt-1 text-lg">{item.TITLE}</h3>
+          <h3
+            style={{
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: "1",
+              overflow: "hidden",
+            }}
+            className="mt-1 text-lg"
+          >
+            {item.TITLE}
+          </h3>
         </a>
         <p
           className="mt-1 text-sm tracking-wide opacity-85"
@@ -53,7 +63,7 @@ function NewsItem({ item }) {
         >
           {item.BODY}
         </p>
-        <div className="mt-3 flex w-full items-center justify-between">
+        <div className="mt-3 flex w-full flex-col justify-between gap-3 md:flex-row md:items-center md:gap-0">
           <span
             className="text-xs opacity-60"
             style={{
