@@ -1,7 +1,7 @@
 import ThemeHandler from "../utils/ThemeHandler";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-function Header({ activeNavLink }) {
+function Header() {
   return (
     <header className="min-h-[100px] border-b-2 border-black bg-green-700 text-white group-[.is-notFound]:hidden dark:border-white">
       <div className="relative mx-auto flex min-h-[100px] w-full flex-wrap items-center justify-center px-1 lg:container sm:px-6 md:justify-between lg:max-w-[1225px]">
@@ -9,16 +9,16 @@ function Header({ activeNavLink }) {
           <span className="text-3xl font-bold">Crypto App</span>
         </div>
         <nav className="flex w-full justify-center md:w-1/3">
-          <ul className="flex items-center gap-8 *:opacity-60">
-            <li
-              className={`cursor-pointer text-xl ${activeNavLink === "" ? "!opacity-100" : ""}`}
-            >
-              <Link to="/">Home</Link>
+          <ul className="flex items-center gap-8 *:*:opacity-60">
+            <li className={`cursor-pointer text-xl`}>
+              <NavLink className="aria-[current]:opacity-100" to="/">
+                Home
+              </NavLink>
             </li>
-            <li
-              className={`cursor-pointer text-xl ${activeNavLink === "news" ? "!opacity-100" : ""}`}
-            >
-              <Link to="/news">News</Link>
+            <li className={`cursor-pointer text-xl`}>
+              <NavLink className="aria-[current]:opacity-100" to="/news">
+                News
+              </NavLink>
             </li>
           </ul>
         </nav>

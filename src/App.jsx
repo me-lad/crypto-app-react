@@ -3,16 +3,10 @@ import Home from "./pages/Home";
 import News from "./pages/News";
 import The_404 from "./pages/The_404";
 import Page from "./models/Page";
-import { useEffect } from "react";
-import { apiKey_gecko, apiQuery_gecko } from "./constants/APIs";
-import axios from "axios";
+import { useAxiosDefault } from "./hooks/useAxiosDefault";
 
 function App() {
-  //! Setting the coin gecko api header for axios
-  useEffect(() => {
-    axios.defaults.headers.common["accept"] = "application/json";
-    axios.defaults.headers.common[apiQuery_gecko] = apiKey_gecko;
-  }, []);
+  useAxiosDefault();
 
   return (
     <>

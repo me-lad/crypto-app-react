@@ -5,6 +5,7 @@ import Footer from "../layouts/Footer";
 import { useLocalStorage } from "@uidotdev/usehooks";
 import CoinModal from "../components/CoinModal";
 import ErrorModal from "../utils/ErrorModal";
+import { useTitle } from "../hooks/useTitle";
 
 function Page() {
   const [coinModalStatus, setCoinModalStatus] = useState({
@@ -12,19 +13,12 @@ function Page() {
     id: "",
   });
   const [errors, setErrors] = useState([]);
-  const [activeNavLink, setActiveNavLink] = useState();
   const [watchList, saveWatchList] = useLocalStorage("watchList", []);
-
-  //! Removing the class that is related to 404_page
-  const location = useLocation();
-  useEffect(() => {
-    document.title = `${location.pathname == "/" ? "Home" : location.pathname.slice(1, 2).toUpperCase() + location.pathname.slice(2)}`;
-    document.body.classList.remove("is-notFound");
-    setActiveNavLink(location.pathname.slice(1));
-  }, [location]);
+  //! Manage each page title
+  useTitle();
   return (
     <>
-      <Header activeNavLink={activeNavLink} />
+      <Header />
       <main className="relative">
         {errors.length > 0 ? (
           <ErrorModal errors={errors} setErrors={setErrors} />
