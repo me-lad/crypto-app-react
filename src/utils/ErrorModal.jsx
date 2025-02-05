@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
-function ErrorModal({ errors, setErrors }) {
-  const [counter, setCounter] = useState(60);
+function ErrorModal({ errors, setErrors, counter, setCounter }) {
   useEffect(() => {
     document.getElementById("my_modal_3").showModal();
     if (!errors.includes("You've exceeded the Rate Limit. Please try after"))
@@ -10,6 +9,8 @@ function ErrorModal({ errors, setErrors }) {
       setCounter((counter) => {
         if (counter === 0) {
           clearInterval(interval);
+          setErrors([]);
+          setCounter(60);
           return 0;
         } else {
           return counter - 1;

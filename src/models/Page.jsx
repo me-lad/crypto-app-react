@@ -13,6 +13,8 @@ function Page() {
     id: "",
   });
   const [errors, setErrors] = useState([]);
+  const [errorModalRemainingCounter, setErrorModalRemainingCounter] =
+    useState(60);
   const [watchList, saveWatchList] = useLocalStorage("watchList", []);
   //! Manage each page title
   useTitle();
@@ -21,7 +23,12 @@ function Page() {
       <Header />
       <main className="relative">
         {errors.length > 0 ? (
-          <ErrorModal errors={errors} setErrors={setErrors} />
+          <ErrorModal
+            errors={errors}
+            setErrors={setErrors}
+            counter={errorModalRemainingCounter}
+            setCounter={setErrorModalRemainingCounter}
+          />
         ) : !!coinModalStatus.mount ? (
           <CoinModal
             status={coinModalStatus}

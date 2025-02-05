@@ -28,6 +28,7 @@ function CoinsList({
       } catch ({ name, message }) {
         if (name === "AxiosError") {
           setErrors(["You've exceeded the Rate Limit. Please try after"]);
+          setTimeout(() => window.location.reload(), 60000);
         } else {
           setErrors([message]);
         }

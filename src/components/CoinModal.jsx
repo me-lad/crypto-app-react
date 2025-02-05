@@ -7,13 +7,13 @@ import CoinChart from "./CoinChart";
 
 function CoinModal({ status, setStatus, setErrors }) {
   //! Coin data modal
-  useLockBodyScroll();
   const [coinData, setCoinData] = useState();
   const [chartDuration, setChartDuration] = useState(1);
   const [chartRef, setChartRef] = useState("prices");
   const [chartData, setChartData] = useState();
   const [isRendering, setIsRendering] = useState(false);
   const [isRendering_chart, setIsRendering_chart] = useState(false);
+  useLockBodyScroll();
 
   useEffect(() => {
     const getData = async () => {

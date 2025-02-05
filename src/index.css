@@ -23,3 +23,26 @@ html {
     font-size: 0.84375rem;
   }
 }
+
+* {
+  scrollbar-color: unset !important;
+
+  &:hover {
+    scrollbar-color: unset !important;
+  }
+}
+
+body,
+body * {
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 200px;
+    background-color: #fff;
+    border-radius: 25px;
+  }
+}
