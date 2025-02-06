@@ -48,11 +48,11 @@ function SearchCoin({ setCoinModalStatus, setErrors }) {
         placeholder="Search Coin"
         className="rounded-md border border-black bg-transparent px-4 py-2 font-semibold focus-visible:outline-none focus-visible:placeholder:text-green-700 dark:border-white"
       />
-      <div className="invisible absolute top-[125%] z-50 flex max-h-[250px] min-h-[125px] w-full -translate-y-5 items-center justify-center rounded-md bg-black text-white transition-transform duration-150 group-[.visible]/search:visible group-[.visible]/search:translate-y-0 dark:bg-white dark:text-black">
+      <div className="invisible absolute top-[125%] z-50 flex max-h-[300px] min-h-[125px] w-full -translate-y-5 items-center justify-center rounded-md bg-black text-white transition-transform duration-150 group-[.visible]/search:visible group-[.visible]/search:translate-y-0 dark:bg-white dark:text-black">
         {isRendering ? (
           <span className="loading loading-spinner w-1/4"></span>
         ) : (
-          <ul className="max-h-[250px] w-full overflow-y-auto overflow-x-hidden px-2">
+          <ul className="no-scrollbar max-h-[300px] w-full overflow-y-auto overflow-x-hidden px-2">
             {searchResponse.length === 0 ? (
               <li className="text-center text-2xl">Nothing found !</li>
             ) : (

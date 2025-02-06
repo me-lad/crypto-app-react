@@ -13,9 +13,9 @@ function HomeTopbar({
   return (
     <div className="flex flex-wrap items-center justify-center gap-8 gap-y-6 md:justify-between">
       <div className="flex flex-wrap items-center justify-center gap-10 gap-y-6 md:justify-start">
-        <h1 className="flex flex-wrap items-center justify-center gap-2 text-2xl sm:justify-start">
+        <h1 className="flex flex-wrap items-center justify-center gap-y-2 text-2xl sm:justify-start sm:gap-2">
           Cryptocurrency Data by
-          <label className="swap swap-indeterminate">
+          <label className="swap swap-indeterminate text-center sm:text-start">
             {contentSelectedSection === 1 ? (
               <input
                 type="checkbox"
