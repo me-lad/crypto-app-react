@@ -9,6 +9,5 @@ createRoot(document.getElementById("root")).render(
     <BrowserRouter basename="/crypto">
       <App />
     </BrowserRouter>
-    ,
   </StrictMode>,
 );

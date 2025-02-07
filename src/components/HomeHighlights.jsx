@@ -156,7 +156,7 @@ const TrendingCoins = ({ data, setCoinModalStatus }) => {
             <div className="flex items-center gap-2">
               <div className="group/highlight relative">
                 <span>${coin.data.price.toFixed(2)}</span>
-                <span className="invisible absolute -left-5 bottom-6 rounded-sm bg-black px-3 py-1 text-white opacity-0 transition-all delay-75 duration-200 group-hover/highlight:visible group-hover/highlight:opacity-100 dark:bg-white dark:text-black">
+                <span className="invisible absolute right-10 top-2 rounded-sm bg-black px-3 py-1 text-white opacity-0 transition-all delay-75 duration-200 group-hover/highlight:visible group-hover/highlight:opacity-100 dark:bg-white dark:text-black">
                   ${coin.data.price}
                 </span>
               </div>

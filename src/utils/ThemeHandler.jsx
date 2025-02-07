@@ -2,7 +2,7 @@ import { useLocalStorage } from "@uidotdev/usehooks";
 import { useEffect, useState } from "react";
 
 function ThemeHandler() {
-  const [theme, saveTheme] = useLocalStorage("theme", "dark");
+  const [theme, saveTheme] = useLocalStorage("Theme", "dark");
   const [enabled, setEnabled] = useState(theme == "dark");
 
   //! Updating color-scheme by theme change
